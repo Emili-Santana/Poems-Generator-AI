@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>AI Poem Generator</title>
   </head>
   <body>
@@ -13,23 +15,21 @@
     </header>
 
     <main>
-      <form>
+        <form id="poem-generator-form">
         <input
           type="text"
           placeholder="Enter the topic of the  poem"
           autofocus
           required
           autocomplete="off"
-          class="instructions"
+          class="instructions" id="user-instructions"
         />
         <input class="submit-button" type="submit" />
       </form>
-      <div class="poem">
-        La tombe dit à la rose 
-        <br />
-        Des pleurs dont l'aube t'arrose
-      </div>
+      <div class="poem" 
+      id="poem">
     </div>
+   
     </main>
     <footer>
       This AI project was coded by
@@ -47,7 +47,7 @@
       >
     </div>
     </footer>
-
+</div>
     <script src="src/index.js"></script>
   </body>
 </html>
