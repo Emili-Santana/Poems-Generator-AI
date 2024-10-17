@@ -15,12 +15,11 @@ function generatePoem(event) {
     let context = "you are a romantic Poem and love write short poems, you mission to generate a 4 lines poem in basic HTML and separete each line. Don't start  wirh (```html ) and finish with (```)in the screen. Sign the poem with 'SheCodes AI' inside a <strong> element. Make sure to follow the user instructions."
     let prompt = `user instructions: Generate a poem about ${instructionsInput.value}`;
     let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
-    console.log(instructionsInput)
-    console.log(prompt)
-    console.log(context)
-    let poemElement = document.querySelector("#poem"); //where the poem will be displied
 
-    poemElement.innerHTML = "Generating a poem for you... please wait"; // it wil show before the poem
+
+    let poemElement = document.querySelector("#poem"); //where the poem will be displied
+    poemElement.classList.remove("hidden") // remove the css style display: none, and the come back to be showed
+    poemElement.innerHTML = `<div class="generating">⏳ Generating a French poem about ${instructionsInput.value}</div>`; // it wil show before the poem
 
     axios.get(apiUrl).then(displeyPoem);
 }
